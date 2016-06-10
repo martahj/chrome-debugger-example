@@ -1,0 +1,7 @@
+To ready for presentation:
+
+Should be able to get an image sprite (sprites), a name, and a number, weight, height
+Stats: name, effort, base
+Abilities: name
+Moves: learn method, name, level_learned_at (0 except), versions
+Types

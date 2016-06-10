@@ -4,8 +4,15 @@
   "description": "Simple app to illustrate debugging principles",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "nodemon server/app"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "node-fetch": "^1.5.3",
+    "nodemon": "^1.9.2"
+  }
 }
