@@ -7,26 +7,20 @@ const Pokemain = {
 
 	data: {},
 
-	attached: [ Typename ],
+	attached: [ Typename, Pokestats ],
 
 
 	init: () => {
 		console.log('this in init', this);
-		console.log('Pokemain', Pokemain);
 		let $pokemain = $('.pokemain');
-		console.log('$pokemain', $pokemain);
 		Pokemain.$pokemain = $pokemain.clone();
 
 		//Other modules with DOM elems need to be initialized
 		let $p = Pokemain.$pokemain;
-
-		console.log('this.attached', Pokemain.attached);
 		Pokemain.attached.forEach( (module) => { 
 			module.init($p)
 			$p.find(module.findString).remove();
 		} );
-
-		console.log('out end pokemain template', Pokemain.$pokemain);
 
 		$pokemain.remove();
 	},
@@ -48,15 +42,11 @@ const Pokemain = {
 		$pokemain.find('.pokeheight').text(data.height);
 		$pokemain.find('.pokeweight').text(data.weight);
 		$pokemain.find('.poketypes').append( Typename.getAll(data.types) );
+		$pokemain.find('.pokestats').append( Pokestats.getAll(data.stats) );
 
 		console.log('going to display info', $pokemain);
 
 		$('#mainbar').find('.box').append($pokemain);
-
-		// Pokemain.attached.forEach( (module) => {
-		// 	module.showAll(data);
-		// })
-
 
 	}
 

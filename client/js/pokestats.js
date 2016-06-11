@@ -6,23 +6,22 @@ const Pokestats = {
 
 	findString: '.pokestat',
 
-	init: () => {
-
-		let $template = $(findString);
+	init: ($pokemain) => {
+		let $template = $pokemain.find(Pokestats.findString);
+		console.log('stat template', $template);
 		Pokestats.$template = $template.clone();
-
 	},
 
-	showStat: (stat) => {
+	getStat: (stat) => {
 		let $stat = Pokestats.$template.clone();
-		$stat.find('.statName').text(stat)
+		$stat.find('.statName').text(stat.stat.name);
+		$stat.find('.statBase').text(stat.base_stat);
+		console.log('stat made', $stat);
+		return $stat;
 	},
 
-	showAll: (data) => {
-		let stats = data.stats;
-
-		stats.forEach( (stat) => {
-			Pokestats.showStat(stat);
-		})
+	getAll: (arrayOfStats) => {
+		// return arrayOfStats.map( stat => Pokestats.$template );
+		return arrayOfStats.map( stat => Pokestats.getStat(stat) );
 	}
 }
