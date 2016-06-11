@@ -4,7 +4,8 @@ $(document).ready(init);
 
 function init () {
 
-	Container.init();
+	Pokemain.init();
+	
 	Pokesearch.init();
 
 }

@@ -17,7 +17,7 @@
 
 	<br>
 
-	<div class="container">
+	<div class="container" id="mainbar">
 		<div class="row">
 		  <div class="box">
 
@@ -27,26 +27,31 @@
 			    </form>
 			  </div>
 
-			  <div class="col-md-5">
-			      <div class="pokemain">
-				      <h4>Name: <span class="pokename">Example</span></h4>
-				      <h4>Number: <span class="pokenumber">Infinity</span></h4>
-				      <h6>Types:</h6>
-				      <p><span class="typename">One</span></p>
-				      <h6>Height: <span class="pokeheight">So tall</span></h6>
-				      <h6>Weight: <span class="pokeweight">So much</span></h6>
+			  <div class="pokemain">
+				  <div class="col-md-5">
+				      <div class="maininfo">
+					      <h4>Name: <span class="pokename">Example</span></h4>
+					      <h4>Number: <span class="pokenumber">Infinity</span></h4>
+					      <h6>Types:</h6>
+					      <ul class=poketypes>
+						      <li class="typename">One</li>
+					      </ul>
+					      <h6>Height: <span class="pokeheight">So tall</span></h6>
+					      <h6>Weight: <span class="pokeweight">So much</span></h6>
+				      </div>
+				  </div>
+				  <div class="col-md-5">
+				    <div class="stats"
+					    <h4>Stats</h4>
+					    <div class="pokestat">
+					      <h6><span class="statName">Awesomeness</span></h6>
+					      <p><span class="statBase">0</span></p>
+					    </div>
+				    </div>
 			      </div>
-			  </div>
+		      </div>
 
-			  <div class="col-md-5">
-			    <h4>Stats</h4>
-			    <div class="pokestat">
-			      <h6><span class="statName">Awesomeness</span></h6>
-			      <p><span class="statBase">0</span></p>
-			    </div>
-			  </div>
-
-		  </div>
+		    </div>  
 		</div>
 	</div>
 
@@ -64,8 +69,13 @@
 
 <script src="./js/jquery.js"></script>
 <script src="./js/pokemonApi.js"></script>
-<script src='./js/container.js'></script>
+
+<script src="./js/typename.js"></script>
+<script src="./js/pokestats.js"></script>
+<script src="./js/pokemain.js"></script>
+
 <script src="./js/pokesearch.js"></script>
+
 <script src='./js/app.js'></script>
 
 
