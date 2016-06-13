@@ -8,6 +8,5 @@ SendR.sendStatus = (res, status) => {
 }
 
 SendR.sendData = (res, status, data) => {
-	console.log('going to send', status, 'and typeof', typeof data);
 	res.status(status).json(data);
 }

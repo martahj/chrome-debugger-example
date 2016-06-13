@@ -14,7 +14,6 @@ PokemonApi.searchByName = (name) => {
 	return Fetch(url)
 	  .then( resp => resp.json() )
 	  .catch( (err) => {
-	  	console.log('error searching by name', err);
 	  	throw err;
 	  })
 

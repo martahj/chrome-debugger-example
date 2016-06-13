@@ -1,7 +1,26 @@
-To ready for presentation:
+Some of the files in this are purposefully screwed up, so that we can fix the app as we go along.
 
-Should be able to get an image sprite (sprites), a name, and a number, weight, height
-Stats: name, effort, base
-Abilities: name
-Moves: learn method, name, level_learned_at (0 except), versions
-Types
+Walk through what the app should do.
+- Index has a placeholder. On init, the app should make copies of the elements we'll need, and then remove the placeholder.
+- When we search for a pokemon, we want the template to be updated with our pokemon's info, and the page to update accordingly.
+
+Start the demonstration by loading the app. We'll see a 404 for our image. This is because our image is at the wrong location.
+Change the styles sheet to have the right url.
+
+Reload the page.
+The app won't work because Typename is not defined.
+Typename is not defined because we forgot to include it as a script tag.
+
+We are not getting any useful data back from the server if we capitalize our pokemon's name, even though we are sending a 200 status.
+This is because the promise technically resolves, but the pokemon is not found because it needs to be in all lower case.
+To fix this, coerce the pokemon's name to be in all lower case on the server.
+Add console statements so we can track what's happening.
+
+Now, we should be getting data back from the server. However, it is not showing up correctly.
+The main view appends itself to the #mainbar, which causes it to show up below the first row.
+Can fix this by changing ln 56 of js/pokemain to: $('#mainbar').find('.box').append($pokemain);
+
+Our stats are not rendering correctly. This is because the stats object has a stats property that we're not accoutning for.
+To fix this, change line 16 of js/pokestats to look up stats.stats.
+
+No need to fix this because CSS, but the display will look bad in phone view.

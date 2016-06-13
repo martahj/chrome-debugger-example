@@ -6,8 +6,8 @@ const Pokesearch = {
 
 		$('#pokesearch').submit( function(e) {
 			e.preventDefault();
-			let pokemon = $('#pokemon').val().toLowerCase();
-			// let pokemon = $('#pokename').val();
+			let pokemon = $('#pokemon').val();
+			console.log('going to send get request for', pokemon);
 
 			Pokesearch.search(pokemon);
 		})
@@ -17,7 +17,6 @@ const Pokesearch = {
 
 		return PokemonAPI.searchByName(pokemon)
 		.then( (data) => {
-			console.log('got data for pokemon', pokemon, data);
 			Pokemain.displaySearchResults(data);
 		})
 		.catch( (err) => {
