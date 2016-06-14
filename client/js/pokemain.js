@@ -3,7 +3,6 @@
 const Pokemain = {
 
 	$pokemain: undefined,
-	// $typenameTemplate: undefined,
 
 	data: {},
 

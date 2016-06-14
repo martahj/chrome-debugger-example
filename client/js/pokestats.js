@@ -12,6 +12,7 @@ const Pokestats = {
 	},
 
 	getStat: (stat) => {
+		console.log('stat', stat);
 		let $stat = Pokestats.$template.clone();
 		$stat.find('.statName').text(stat.name);
 		$stat.find('.statBase').text(stat.base_stat);

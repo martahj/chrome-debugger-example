@@ -4,6 +4,8 @@ const Pokesearch = {
 
 	init: () => {
 
+		console.log('setting up event listener for form submit');
+
 		$('#pokesearch').submit( function(e) {
 			e.preventDefault();
 			let pokemon = $('#pokemon').val();
